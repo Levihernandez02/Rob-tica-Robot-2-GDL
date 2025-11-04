@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Robot 2 GDL</title>
+    <link rel="stylesheet" href="estilo.css" />
+    <link rel="icon" type = "image/png" href = "img/fvc.png">
+</head>
+
+<body>
+    <h1>Robot planar de 2GDL</h1>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="main-container">
+
+        <!-- PANEL DE CONTROL -->
+        <div class="control-panel">
+            <div class="control-box">
+                <h2>Brazo Robot</h2>
+                <label for="xd">xd (cm):</label>
+                <input type="number" id="xd" value="15">
+                <label for="yd">yd (cm):</label>
+                <input type="number" id="yd" value="10">
+                <button onclick="moverBrazo()">Mover Brazo</button>
+                <button onclick="irAPosicionInicial()" style="margin-top: 10px;">
+                    Posición Inicial
+                </button>
+                <div class="buttons-container">
+                    <button class="btn-secundario" onclick="limpiarHistorial()">Limpiar Historial</button>
+                    
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- CANVAS -->
+        <div class="canvas-container">
+            <canvas id="robotCanvas" width="500" height="500"></canvas>
+        </div>
+
+    </div>
+
+    <!-- GRÁFICA -->
+    <div class="charts-container">
+        <div class="chart-box">
+            <h3>q1(t) y q2(t) - Brazo Robot</h3>
+            <div class="chart-wrapper">
+                <canvas id="grafica1"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="programacion.js"></script>
+</body>
+
+</html>
